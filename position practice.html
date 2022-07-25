@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <style>
+            #dd,#de{
+                border:1px solid;
+
+                background: greenyellow;
+                width:150px;
+                display: inline-block;
+            }
+            #d1{
+                display: none;
+                border:1px solid;
+                border-color: orange;
+                width:150px;
+                position: relative;
+            }
+            #dd:hover #d1{
+                display: block;
+                border:1px solid;
+                position:absolute;
+                background-color: yellow;
+            }
+            #d111{
+                display:none;
+                border:1px solid;
+                border-color: orange;
+                width:150px;
+
+                
+
+            }
+            #d11:hover{
+                color:aqua;
+                font-weight: 600;
+                position: relative;
+                font-weight: 600;
+                width:150px;
+                background-color: blueviolet;
+            }
+            #d11:hover #d111{
+                font-weight: normal;
+                    display:block;
+                    background-color: brown;
+                   position:absolute;
+                   left:100px;
+                   top:0px;
+                   font-weight: normal;
+                   color:
+
+
+                }                
+            
+            #d2{
+                display: none;
+                border:1px solid;
+                width:150px;
+                position: relative;
+            }
+            #de:hover #d2{
+                display: block;
+                border:1px solid;
+                position:absolute;
+                top:30px;
+                background-color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="dd">
+            Course
+            <div id="d1">
+                <div id="d11">
+                     HTML
+                    <div id="d111">
+                        <div>Tables</div>
+                        <div>Forms</div>
+                        <div>Anchors</div>
+                    </div>
+                </div>
+                <div id="d11">CSS
+                    <div id="d111">
+                        <div>Inline Styles</div>
+                        <div>Internal Stylesheets</div>
+                        <div>External Stylesheets</div>
+                    </div>
+                </div>
+                <div>JS</div>
+                <div>Angular</div>
+                <div>React</div>
+            </div>
+        </div>
+        <div id="de">
+            Programs
+            <div id="d2">
+                <div>Fullstack</div>
+                <div>FrontEnd</div>
+                <div>Backend</div>
+                <div>Devops</div>
+                <div>Cloud</div>
+            </div>
+        </div>
+        <h1>hello</h1>
+    </body>
+</html>
