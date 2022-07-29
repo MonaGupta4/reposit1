@@ -13,6 +13,6 @@ else if (num3<num2)
   console.log(num3)
 }
  else 
- {
+{
   console.log(num2)
  }   
