@@ -1,0 +1,29 @@
+<html><body><script>
+//prime or not
+var n=+prompt("enter the number");
+var i=2;
+var primeFlag="true"; 
+while(i<n)
+{
+if((n%i)===0 )
+{
+    console.log(n + " is not a prime number");
+    primeFlag="false";
+}
+
+
+ i+=1;
+ if ((i==n)&&(primeFlag==="true")){
+    console.log(n +  " is a prime number.")
+}  
+if(primeFlag=="false"){
+    i=n;
+}
+for(var i=1; i<=10; i++){
+    console.log(i);
+}
+    
+}
+</script>
+</body>
+</html>
