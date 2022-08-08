@@ -1,0 +1,60 @@
+<html>
+  <body>
+    <script>
+      function compareBy(propertyName) 
+      {
+          return function (a, b,c) 
+          {
+            let x = a[propertyName],
+              y = b[propertyName];
+              z=  c[propertyName];
+          if(x<y)
+          {
+          if (x<z)
+          {
+          return x;
+         }
+          else
+          {
+         return y;
+           }
+
+           }
+      else
+      {
+          if(y<z)
+          {
+          return y;
+          }
+          else
+          {
+      return z;  
+      }}
+           /* if (x > y) {
+              return 1;
+            } else if (x < y) {
+              return -1;
+            } else {
+              return 0;
+            }*/
+          };
+        }
+        let products = [
+          { name: 'iPhone', price: 900 },
+          { name: 'Samsung Galaxy', price: 850 },
+          { name: 'Sony Xperia', price: 700 },
+        ];
+
+        // sort products by name
+        console.log('Products sorted by name:');
+        products.sort(compareBy('name'));
+
+        console.table(products);
+
+        // sort products by price
+        console.log('Products sorted by price:');
+        products.sort(compareBy('price'));
+        console.table(products);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<html>
+  <body>
+    <script>
+      var marks = {
+        coffee: 15,
+        breakfast: 50,
+        tea: 10,
+        lunch: 100,
+        snaks: 20,
+        dinner: 150,
+      };
+      let temp = 0;
+      for (var k in marks) {
+        if (marks[k] > temp) {
+          temp = marks[k];
+          var j = k;
+        }
+      }
+      console.log(marks[j]);
+      console.log(j);
+    </script>
+  </body>
+</html>
+
+
+var fact=1;
+for(var i=1;i<=4;i++){
+  fact*=i;
+}
+cosole.log("factorial of 4 is "+fact);
+
+
+
+var fact=1;
+for(var i=1;i<=5;i++){
+  fact*=i;
+}
+cosole.log("factorial of 5 is "+fact);
+
+
+var fact=1;
+for(var i=1;i<=7;i++){
+  fact*=i;
+}
+cosole.log("factorial of 7 is "+fact);
+
+
+
+
+
+

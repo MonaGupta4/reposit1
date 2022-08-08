@@ -1,0 +1,21 @@
+<html>
+<body>
+    <script>
+        var digit,sum=0;
+var number=+prompt("enter the number");
+        for(var n=number;n>0;n=parseInt(n/10)){
+            digit=n%10;
+            sum=sum*10 +digit;    
+
+
+        }
+        if(number==sum){
+            console.log("the given number "+number+" is a palindrome");
+        }
+        else{
+            console.log("the given number "+number+" is not a pallindrome.");
+        }
+        //console.log("reverse of digits of "+ number +   " is " + sum);
+    </script>
+</body>
+</html>
