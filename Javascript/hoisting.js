@@ -22,5 +22,5 @@ console.log(yy);
 xx1=67;
 console.log(xx1);*/
 var k;
-k=45<50;
+k = 45 < 50;
 console.log(k);
