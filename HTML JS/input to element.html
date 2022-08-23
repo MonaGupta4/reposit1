@@ -1,0 +1,17 @@
+<html><body>
+    <form name="form1" onsubmit="nosubmit(event)">
+    <input type="text" id="tx1" onkeyup=abc(this)>
+<button>click</button>
+</form>
+    <h4 id="h41"><h4>
+    <script>
+        function nosubmit(ev){
+
+                ev.preventDefault();
+        }
+function abc(el,ev){
+    document.getElementById('h41').innerHTML=el.value;
+}
+
+
+</script></body></html>

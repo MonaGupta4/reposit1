@@ -1,0 +1,28 @@
+<html>
+    <body>
+        <h1>hi </h1>
+        <h2>hi</h2>
+        <h1>hello</h1>
+        <h2>hello</h2>
+        <h1>ji</h1>
+        <button onclick="abc()">click</button>
+    
+        <script>
+function abc(){
+var x=document.getElementsByTagName('h1')
+for(var i=0;i<x.length;i++){
+    x[i].style.color="green"
+    
+}
+var y=document.querySelectorAll('h2')
+y.forEach(function (el){
+    el.style.color="blue"
+   
+})
+
+console.dir(x);
+console.dir(y);
+}
+        </script>
+    </body>
+</html>

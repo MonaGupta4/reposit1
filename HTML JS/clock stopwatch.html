@@ -1,0 +1,76 @@
+<html>
+    <body>
+        <h1 id="hr" style=background-color:papayawhip;width:40px;border:4px> </h1>
+        <h1 id="min" style=background-color:papayawhip;width:40px;border:4px> </h1>
+        <h1 id="sec" style=background-color:papayawhip;width:40px;border:4px> </h1>
+        <h1 id="msec" style=background-color:papayawhip;width:40px;border:4px> </h1><br>
+        <button onclick="start()" >Start</button>
+        <button onclick="reset()" >Reset</button>
+        <button onclick="pause()" >Pause</button>
+        <script>
+            var c=0;
+            var timer;
+            display();
+           // document.getElementById('dis').innerHTML=c;
+            function abc()
+            {
+
+            timer=setInterval(function(){
+                //document.getElementById('dis').innerHTML=c;
+                display();
+                c++
+            },1)
+            }
+            function display(){
+                var fmil=0
+                var fsec=0
+var fhr=0
+var fmin=0
+
+var mil=c;
+
+fmil=(((mil%1000)==mil)?mil:mil%1000);
+var tsec=parseInt(mil/1000);
+
+
+fsec=(((tsec%60)==tsec)?tsec:tsec%60);
+var tmin=parseInt(tsec/60);
+
+
+fmin=(((tmin%60)==tmin)?tmin:tmin%60);
+var thr=parseInt(tmin/60);
+
+fhr=(((thr%60)==thr)?thr:thr%60);
+
+//console.log(fhr+":"+fmin+":"+fsec+":"+fmil)
+                 
+                document.getElementById('hr').innerHTML=fhr; 
+                document.getElementById('min').innerHTML=fmin; 
+                document.getElementById('sec').innerHTML=fsec; 
+                document.getElementById('msec').innerHTML=fmil; 
+            }
+            function reset(){
+                c=0;
+                //document.getElementById('dis').innerHTML=0;
+                document.getElementById('hr').innerHTML=0; 
+                document.getElementById('min').innerHTML=0; 
+                document.getElementById('sec').innerHTML=0; 
+                document.getElementById('msec').innerHTML=0; 
+                clearInterval(timer);
+            }
+            function start(){
+                
+                
+                clearInterval(timer);
+                abc();
+                
+            }
+            function pause(){
+                clearInterval(timer);
+                //document.getElementById('dis').innerHTML=c;
+               
+            }
+
+        </script>
+    </body>
+</html>

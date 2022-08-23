@@ -2,20 +2,22 @@
 <html>
     <body>
         <script>
-            var a = 10; // variable a assigned to 10
-
+           // var a = 10; // variable a assigned to 10
+let aa=100;
 var func = function (){ // outermost function
-    var b = 20;
-    console.log("a and b is accessible (outer):", a, b);
+    //var b = 20;
+    let bb=200;
+    
+    console.log("aa and bb is accessible (outer):", aa, bb);
     var innerFunc= function (){ // innermost function
-        var c = 30;
-        console.log("a and b and c is accessible (innner):", a, b, c);
+        let cc = 300;
+        console.log("aa and bb and cc is accessible (innner):", aa, bb, cc);
     }
     innerFunc();
     return;
 }
 func(); // invoke function func 
-console.log("only a is accessible (global):", a);
+console.log("only aa is accessible (global):", aa);
 //console.log("only a is accessible (global):", b);
 //console.log("only a is accessible (global):", c);
         </script>

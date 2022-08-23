@@ -1,0 +1,82 @@
+<html>
+    <body>
+        <form name="form1" onsubmit="nosubmit(event)">
+        
+         <label>name  :</label><input type="text" name="name" ><br>
+         <label>age   :</label><input type="text" name="age" ><br>
+         <label>gender:</label>
+         <input type="radio" name="gender" value="male">male
+        <input type="radio" name="gender" value="female">female<br>
+
+            <button >submit</button>
+    </form>
+        <table border="4">
+            <thead>
+                <th>name</th>
+                <th>age</th>
+                <th>gender</th>
+
+            </thead>
+            <tbody id="tab1"> </tbody>
+         </table>
+        
+
+    <script>
+        var students=[
+            {
+                name:'mudit',
+                age : 12,
+                gender:"male"
+
+            },
+            {
+                name:"kanav",
+                age:16,
+                gender:"male"
+            },
+            {
+                name:"manya",
+                age:14,
+                gender:"female"
+            }
+        ]
+        gentable();
+       function gentable(){
+        tab1.innerHTML="";
+        students.forEach(function(a){
+            var newtr=document.createElement('tr') ;
+            console.log(a.name, a.age);
+            var nametd=document.createElement('td');
+            nametd.innerHTML=a.name;
+        
+            var agetd=document.createElement('td');
+            agetd.innerHTML=a.age;
+            var gentd=document.createElement('td');
+            gentd.innerHTML=a.gender;
+
+            
+            newtr.appendChild(nametd);
+            newtr.appendChild(agetd);
+            newtr.appendChild(gentd);
+
+
+            document.getElementById("tab1").appendChild(newtr);
+
+        })}
+
+
+function nosubmit(ev){
+ev.preventDefault();
+var newstu={
+    name:" ",
+    age:" ",
+    gender:" "
+}
+newstu.name=document.form1.name.value;
+newstu.age=document.form1.age.value;
+newstu.gender=document.form1.gender.value;
+students.push(newstu);
+gentable();
+}
+
+</script></body></html>

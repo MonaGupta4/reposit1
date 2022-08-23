@@ -1,0 +1,39 @@
+<html>
+    <body>
+        <h1 id="dis" style=background-color:papayawhip;width:40px;> </h1><br>
+        <button onclick="start()" >Start</button>
+        <button onclick="reset()" >Reset</button>
+        <button onclick="pause()" >Pause</button>
+        <script>
+            var c=0;
+            var timer;
+            document.getElementById('dis').innerHTML=c;
+            function abc()
+            {
+
+            timer=setInterval(function(){
+                document.getElementById('dis').innerHTML=c;
+                c++
+            },10)
+            }
+            function reset(){
+                c=0;
+                document.getElementById('dis').innerHTML=0;
+                clearInterval(timer);
+            }
+            function start(){
+                
+                
+                clearInterval(timer);
+                abc();
+                
+            }
+            function pause(){
+                clearInterval(timer);
+                //document.getElementById('dis').innerHTML=c;
+               
+            }
+
+        </script>
+    </body>
+</html>

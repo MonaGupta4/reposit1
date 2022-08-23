@@ -1,0 +1,46 @@
+<html>
+    <body>
+        <table border="4">
+            <thead>
+                <th>name</th>
+                <th>age</th>
+
+            </thead>
+            <tbody id="tab1"> </tbody>
+         </table>
+        
+
+    <script>
+        var students=[
+            {
+                name:'mudit',
+                age : 12
+            },
+            {
+                name:"kanav",
+                age:16
+            },
+            {
+                name:"manya",
+                age:14
+            }
+        ]
+        students.forEach(function(a){
+            var newtr=document.createElement('tr') ;
+            console.log(a.name, a.age);
+            var nametd=document.createElement('td');
+            nametd.innerHTML=a.name;
+        
+            var agetd=document.createElement('td');
+            agetd.innerHTML=a.age;
+
+            newtr.appendChild(nametd);
+            newtr.appendChild(agetd);
+
+            document.getElementById("tab1").appendChild(newtr);
+
+        })
+
+
+
+</script></body></html>

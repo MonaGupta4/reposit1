@@ -1,0 +1,15 @@
+<html>
+    <body>
+      <ul id="id1"></ul>
+           <script>
+                var fruits=["kiwi","apple","orange","guava"];
+
+                fruits.forEach(function(a)
+                {
+                        var newli=document.createElement("li");
+                        newli.innerHTML=a;
+                        document.getElementById("id1").appendChild(newli);
+                })
+            </script>
+    </body>
+</html> 
