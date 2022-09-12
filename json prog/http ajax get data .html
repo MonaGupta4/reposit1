@@ -1,0 +1,26 @@
+<html>
+    <div id="div1"></div>
+    <ul id="ul1"></ul>
+    
+    <body>
+        <script>
+            var httpobj=new XMLHttpRequest();
+            httpobj.onreadystatechange=function(){
+               console.log(httpobj.readyState);
+                if(httpobj.readyState==4){
+                var obj=JSON.parse(httpobj.responseText);
+               
+                obj.slice(0,9).forEach((element,i) =>
+                {var newli=document.createElement("li")
+                  newli.innerHTML=element.name
+                  document.getElementById("ul1").appendChild(newli)
+                }
+            );
+             
+            }}
+            httpobj.open('GET',"https://restcountries.com/v2/all");
+            httpobj.send();
+
+        </script>
+    </body>
+</html>

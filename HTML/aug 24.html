@@ -1,0 +1,31 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+           
+            function mult(a,b,cbf){
+                if(isNaN(a)||isNaN(b))
+                {
+                    cbf("can't multiply non numbers",null)
+                }
+                else{
+                    cbf(null,a*b)
+                }
+            }
+            
+            mult(9,'w',function(err,res)
+            {
+                if(err){
+                console.log(err)
+                 }
+                else{
+                    console.log(res)
+                }
+            })  
+            
+        
+        </script>
+    </body>
+</html>

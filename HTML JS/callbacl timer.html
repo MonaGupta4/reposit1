@@ -1,0 +1,28 @@
+<html>
+    <body>
+        <script>
+function getUsers(cbfn) 
+  {
+   
+    setTimeout(function() {
+      cbfn( [
+        { username: 'john', email: 'john@test.com' },
+        { username: 'jane', email: 'jane@test.com' },
+      ]);
+    }, 1000);
+  
+  }
+  
+  function findUser(name,cbconfn) 
+  {
+       getUsers(function(arrusers){
+       const a = arrusers.find(function(a) { a.username === name}); 
+       }); 
+   
+      cbconfn(a);
+  }
+  
+  findUser('john',console.log);
+</script>
+    </body>
+</html>

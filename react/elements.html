@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> 
+        <style>
+        .bend {
+            font-style:italic;
+            font-weight: 200;
+ }
+        </style>
+    </head>
+    <body>
+        <div id="div1"></div>
+        <script type="text/babel">
+
+           var ar=["mona","geeta","anita"];
+           var t=2;
+             var x=<h1 style={t>10?{backgroundColor:'blue'}:{backgroundColor:"yellow"}
+                            }
+                 className="bend">
+                    {
+                      ar.map((a)=>{return(<li>{a}</li>)}
+                      )  
+                    }
+              created with jsx using  babel {34+78}
+              </h1>
+
+
+             ReactDOM.render(x,document.getElementById("div1")) 
+
+            // var rh1=React.createElement("h1",{
+            //         style:{backgroundColor:'grey'}
+                    
+            //         ,class:"bend"},
+            //      "react js element"  );
+            //      ReactDOM.render(rh1,document.getElementById("div1"));
+        </script>
+
+    </body>
+</html>

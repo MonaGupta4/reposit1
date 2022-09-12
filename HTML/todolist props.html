@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> 
+   
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+
+
+
+            function Todolist()
+
+            {
+
+                var [todlist,settodlist]=React.useState(["ad","dsgvdfbfg"])
+                
+                function addtask(){
+                    var newtask=document.getElementById("text1").value
+                    settodlist([...todlist,newtask])
+                }
+                return
+                        (
+                            <div>
+                                <input type="text" id="text1" />
+                                <button onClick={addtask}>add</button>
+                                <ul>
+                               
+                                    {
+                                        todlist.map((t)=>{
+                                        
+                                            return
+                                                   (
+                                                    <li>{t}</li>
+                                                    
+                                                   )
+                                        
+                                        })
+                                    }
+                                    </ul>
+                               
+                            </div>
+                        )
+            }
+
+                ReactDOM.render(<Todolist></Todolist>,document.getElementById("root"))
+           
+        </script>
+
+    </body> 
+</html>
+
+
+
+
+

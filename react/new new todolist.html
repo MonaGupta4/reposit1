@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> 
+       
+    </head>
+    <body>
+        <div id="div1"></div>
+        <script type="text/babel">
+            function Task(props){
+                return(
+                    <li>{props.t}
+                    <button onClick={()=>props.deltask(props.index)}>deleteTask</button>
+                    </li>
+                )
+            }
+            function Todolist(){
+                    var[tdlist,settdlist]=React.useState(["abc","def","ghi"]);
+                    function addtask(){
+                        var temp1=document.getElementById("text1").value;
+                        settdlist([...tdlist,temp1])
+                    }   
+                    function deletetask(k){
+                        var temp=[...tdlist]
+                        temp.splice(k,1)
+                        settdlist([...temp])
+                    }
+
+                    return(
+                        <div>
+                                <input type="text" id="text1"/>
+                                <button onClick={addtask}>add task</button>
+                        <ul>
+                            {
+                                tdlist.map((a,i)=>{
+                                   return(
+                                     <Task t={a} index={i} deltask={deletetask}></Task>
+                                   )
+                                })
+
+                            }
+                        </ul>
+                        </div>
+                    )
+                }
+        
+
+         ReactDOM.render(<Todolist></Todolist>,document.getElementById("div1"))
+        </script>
+
+    </body>
+</html>

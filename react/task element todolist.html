@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> 
+       
+    </head>
+    <body>
+        <div id="div1"></div>
+        <script type="text/babel">
+
+
+
+         var Task=React.memo(function Task(props){
+
+            React.useEffect(()=>
+            console.log("Task component rendered with empty dependency"),[]);
+            
+            React.useEffect(()=>
+            console.log("Task component with NO dependency"))
+            
+            
+               return(
+                    <li>{props.t}
+                         <button onClick={()=>props.ondelete(props.index)}>Delete</button></li>
+               )
+
+          })
+         
+          
+            
+            function Todolist(){
+                    var[tdlist,settdlist]=React.useState(["abc","def","ghi"]);
+                    var[newtask,setnewtask]=React.useState('');
+                    var refa=React.useRef();
+          
+
+                   
+                    function addtask(){
+                        
+                        settdlist([...tdlist,newtask])
+                    }   
+
+                    
+                    function deletetask(k){
+                        var temp=[...tdlist]
+                        temp.splice(k,1)
+                        settdlist([...temp])
+                    }
+
+
+                    React.useEffect(()=>{
+                         document.getElementById("text1").value=""
+                        // alert('task added');
+                              },[tdlist])
+
+
+                    React.useEffect(()=>{
+                         refa.current.focus();
+                         //alert('focus added');
+                          },[])
+                          
+                     function ifenter (e){
+                         if(e.keyCode===13)
+                         addtask();
+                     }     
+                          
+               return(
+                        <div>
+                                <input type="text" id="text1" onChange={(e)=>setnewtask(e.target.value)} ref={refa}  onKeyUp={ifenter}/> 
+                                <button onClick={addtask} >add task</button>
+                        <ul>
+                            {
+                                tdlist.map((a,i)=>{
+                                   return(
+                                    <Task  t={a} index={i} ondelete={deletetask}></Task>
+                                  
+                                   )
+                                })
+
+                            }
+                        </ul>
+                        </div>
+                    )
+                }
+         ReactDOM.render(<Todolist></Todolist>,document.getElementById("div1"))
+        </script>
+    </body>
+</html>
+
+<button onClick={()=>{toggle(i)}} >
+    {t.status?Undo:Done}
+</button>
+function toggle(index){
+    temp=[...todos]
+    temp[index].status=!temp[index].status
+    setTodos([...temp])
+}

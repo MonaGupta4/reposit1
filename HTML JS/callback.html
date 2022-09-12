@@ -1,0 +1,32 @@
+<html>
+    <body>
+        <script>
+            function fn(x,y,cbfn){ //generalised function
+                  return cbfn(x,y);
+             }
+
+
+        //     // function add(a,b)
+        //     // {
+        //     //     return (a+b)
+        //     //  }
+        //     function sub(a,b)//normal function
+        //     {
+        //         return(a-b);
+        //     }
+            
+        //     console.log(fn(50,34,sub))
+        //    // console.log(fn(50,34,add))
+        //   // console.log(add);
+
+
+
+
+            var add=fn(30,40,function(a,b){//anonymous so self executable
+             return console.log(a+b);
+            })
+
+          
+        </script>
+    </body>
+</html>

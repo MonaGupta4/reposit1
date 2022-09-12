@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> 
+       
+    </head>
+    <body>
+        <div id="div1"></div>
+        <script type="text/babel">
+          function Myform(){
+               var[myname,setMyname]=React.useState('');
+               function handlesubmit(ev){
+                    ev.preventDefault();
+                    //console.log("your name is"+myname)
+               }
+
+          
+        return(
+          <div>
+               <form onSubmit={handlesubmit}>
+                    <label>Enter youe name:
+                         <input
+                          type="text" 
+                          value={myname} 
+                         onChange={(e) => setMyname(e.target.value)}
+                         />
+                    </label>
+                    
+                    <input type="submit"/>
+               </form>
+          </div>
+
+        ) 
+          } 
+
+         //ReactDOM.render(<Myform></Myform>,document.getElementById("div1"))
+         const root = ReactDOM.createRoot(document.getElementById('div1'));
+root.render(<MyForm />);
+        </script>
+
+    </body>
+</html>

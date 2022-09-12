@@ -1,0 +1,63 @@
+<html>
+<body>
+    <script>
+    
+     var ar=["delhi","ggn","blr","pune","noida"];
+var [x,y,z]=ar;
+console.log(x);
+console.log(y);
+console.log(z);
+var [x,y,...z]=ar;
+var [,,,,city]=ar
+console.log("CITY    "+city)
+console.log(x);
+console.log(y);
+console.log(z);
+var [x,y]=ar;
+[x,y]=[y,x]
+console.log(x)
+console.log(y)
+
+function op(a,b){
+    return([a,b,a+b,a-b,a*b])
+}
+var [l,m,n,p]=op(5,10);
+console.log(l);
+console.log(m);
+console.log(n);
+console.log(p);
+var student=[
+    {
+    name:"kanav",
+    age:16,
+    course:12,
+    address:{
+        city:"chandigarh",
+        sector:17,
+    }},
+    {name:"mudit",
+    age:12,
+    course:6,
+    address:{
+        city:"ggn",
+        sector:84,}}
+    ]
+function studetail(stu){
+    console.log(`${stu.name} is 
+    ${stu.age}years old 
+    living in ${stu.address.city}`)
+}  
+studetail(student[1]);
+
+function newstudetail({name,age,course,address:{city,sector}}){
+    console.log(`${name} is ${age} yeras old,
+     doing ${course} at  ${sector} in ${city}`)
+}
+newstudetail(student[0]);
+
+
+
+
+    </script>
+</body>
+</html>

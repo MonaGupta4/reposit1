@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <script crossor
+        igin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> 
+    <style>
+       .class1{
+        border: 2px solid grey;
+        margin:10px;
+                padding:10px;
+       }
+    </style>
+    </head>
+    <body>
+        <div id="div1" >
+
+        </div>
+        <script type="text/babel">
+function StuTable(){
+    var [stu,setStu]=React.useState([
+
+    {fname:"mona",lname:"gupta",age:40},
+     {fname:"hmona",lname:"hgupta",age:20},
+    {fname:"gmona",lname:"ggupta",age:70}
+    ])
+    function addstu(){
+        var newstu={
+        fname:document.getElementById("fn").value,
+        lname:document.getElementById("ln").value,
+        age:document.getElementById("age").value
+        }
+        //alert(JSON.stringify(newstu))
+        setStu([...stu,newstu])
+     }
+    function sortbyfname(){
+        var temp=[...stu]
+        temp.sort((a,b)=>{
+            return((a.fname>b.fname)?1:-1)
+        })
+        setStu([...temp])
+
+    }
+    function sortbykey(key){
+        var temp=[...stu]
+        temp.sort((a,b)=>{
+            return((a[key]>b[key])?1:-1)
+        })
+        setStu([...temp])
+    }
+    return(<div className="class1">
+        <input type="text" id="fn"/> name<br/>
+        <input type="text" id="ln"/>last name<br/>
+        <input type="text" id="age"/>age<br/>
+        <button onClick={addstu}>add</button>
+         <table>
+            <thead>
+                <th onClick={sortbykey}>firstname</th>
+                <th  onClick={()=>{sortbykey('lname')}}>lasttname</th>
+                <th onClick={()=>{sortbykey('age')}}>age</th>
+                </thead>
+                <tbody>
+                   
+                    {
+                        stu.map((s,i)=>{
+                            return(
+                                <tr>
+                                    <td>{s.fname}</td>
+                                    <td>{s.lname}</td>
+                                     <td>{s.age}</td>
+                                  </tr>
+                            )
+                        })
+                    }
+                        
+                        
+              </tbody>
+        </table>
+
+          </div>)}
+     // ReactDOM.render(<StuTable></StuTable>,document.getElementById("div1"))
+        function Collage()
+        {
+            return(
+                <div>
+                    <StuTable></StuTable>
+                    <StuTable></StuTable></div>
+                
+            )
+        }
+     ReactDOM.render(<Collage></Collage>,document.getElementById("div1"))
+
+        </script>
+
+    </body> 
+</html>

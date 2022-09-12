@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> 
+        <style>
+        .bend {
+            font-style:italic;
+            font-weight: 200;
+            border:2px solid;
+            margin:10px;
+            padding: 10px;
+ }
+        </style>
+    </head>
+    <body>
+        <div id="div1"></div>
+        <script type="text/babel">
+
+         function Ratings(){
+            var[r,setr]=React.useState('')
+            var[ratings,setratings]=React.useState([])
+            function show(c){
+                setr(c)
+                var temp=[...ratings]
+                temp.push(c)
+                setratings(temp)
+            }
+         return(
+            <div className="bend">
+         <button onClick={()=>{show(1)}}>1</button>
+         <button onClick={()=>{show(2)}} >2</button>
+         <button onClick={()=>{show(3)}}>3</button>
+         <button onClick={()=>{show(4)}}>4</button>
+         <button onClick={()=>{show(5)}}>5</button>
+         <h1 >Rating:{r}/5</h1>
+         <h1>Total Rating:{ratings.reduce((a,b)=>(a+b),0)/ratings.length}</h1>
+         <h1>5------{ratings.filter((r)=>r===5).length}</h1>
+         <h1>4------{ratings.filter((r)=>r===4).length}</h1>
+         <h1>3------{ratings.filter((r)=>r===3).length}</h1>
+         <h1>2------{ratings.filter((r)=>r===2).length}</h1>
+         <h1>1------{ratings.filter((r)=>r===1).length}</h1>
+
+         
+         </div>
+         )}
+         ReactDOM.render(<Ratings></Ratings>,document.getElementById("div1"))
+        </script>
+
+    </body>
+</html>

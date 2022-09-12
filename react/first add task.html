@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> 
+    <style>
+        .bend{
+            font-style: italic;
+        }
+    </style>
+    </head>
+    <body>
+        <input type="text" id="text1")>
+        <button onclick="addTask()">addTask</button>
+       
+        <div id="div1"></div>
+        <script type="text/babel">
+        var tasks=["car wash","vegies","coding"];
+        function addTask(){
+            var newtask=document.getElementById('text1').value;
+            tasks.push(newtask)
+            gengui();
+        }
+        function gengui(){
+        var X=<ul>
+            {
+                tasks.map((t)=>{
+                    return(<li>{t}</li>)
+                })
+            }
+
+             </ul>
+            
+           ReactDOM.render(X,document.getElementById('div1'));
+            }
+            gengui();
+        
+        </script>
+
+    </body>
+</html>

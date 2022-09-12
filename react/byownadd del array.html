@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> 
+    <style>
+       
+    </style>
+    </head>
+    <body>
+        <div id="div1"></div>
+        <script type="text/babel">
+
+      var X=function(){
+        var [stu,setStu]=React.useState(['fsf','yyj','kik'])
+        function addStudent(){
+            var newstu=document.getElementById("text1").value
+            setStu([...stu,newstu])
+        }
+        function deleteStu(index){
+            var temp=[...stu]
+            temp.splice(index,1)
+            setStu([...temp])
+
+        }
+        return(
+            <div>
+                <input type="text" id="text1"/>
+                <button onClick={addStudent}>add</button>
+            {
+                
+                stu.map((s,i)=>{
+                    return(<li>{s}<button onClick={()=>{deleteStu(i)}}>del</button></li>)
+                })
+            
+            }
+            </div>
+        )
+
+      }
+        ReactDOM.render(<X></X>,document.getElementById("div1"))
+        </script>
+
+    </body> 
+</html>

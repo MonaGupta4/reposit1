@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <script crossor
+        igin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> 
+    <style>
+       
+    </style>
+    </head>
+    <body>
+        <div id="div1">
+
+        </div>
+        <script type="text/babel">
+
+        function Counter(props)
+        {
+
+         var[c,setc]=React.useState(props.start)
+         function inc(){
+            setc(c+props.step)
+        
+         }
+         function dec(){
+            setc(c-props.step)
+         }
+
+
+        return(
+            <div>
+            <h1>count:{c}</h1><br/>
+            <button onClick={inc}>inc</button>
+            <button onClick={dec}>dec</button>
+            </div>
+        )
+        }
+        function C(){
+            return(
+            <div><Counter start={100} step={10}></Counter>
+                <Counter start={500} step={100}></Counter>
+                
+             </div>)
+        }
+        ReactDOM.render(<C></C>,document.getElementById("div1"))
+        </script>
+
+    </body> 
+</html>
