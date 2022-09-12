@@ -1,4 +1,4 @@
-var i = 
+svar i = 
 var x = prompt("Enter the First Number");
 var y = prompt("Enter the Second Numeber ");
 var z = prompt("Enter the Third Number");

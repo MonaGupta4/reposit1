@@ -6,3 +6,4 @@ while (n > 0) {
 }
 
 console.log("Sum of the digits of " + num + " = " + sum);
+
