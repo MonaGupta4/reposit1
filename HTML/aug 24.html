@@ -4,26 +4,39 @@
     </head>
     <body>
         <script>
-           
-            function mult(a,b,cbf){
-                if(isNaN(a)||isNaN(b))
-                {
-                    cbf("can't multiply non numbers",null)
-                }
-                else{
-                    cbf(null,a*b)
-                }
-            }
+           function div(a,b,cb){
+                    if(b===0)
+                        cb("denomi cant be 0",null);
+                    else
+                        cb(null,a/b);
+                    }
+
+
+             div(30,0,function(err,res){
+                    if (err) console.log(err);
+                    else console.log(res)
+                    });
+
+
+            // function mult(a,b,cbf){
+            //     if(isNaN(a)||isNaN(b))
+            //     {
+            //         cbf("can't multiply non numbers",null)
+            //     }
+            //     else{
+            //         cbf(null,a*b)
+            //     }
+            // }
             
-            mult(9,'w',function(err,res)
-            {
-                if(err){
-                console.log(err)
-                 }
-                else{
-                    console.log(res)
-                }
-            })  
+            // mult(9,'w',function(err,res)
+            // {
+            //     if(err){
+            //     console.log(err)
+            //      }
+            //     else{
+            //         console.log(res)
+            //     }
+            // })  
             
         
         </script>
